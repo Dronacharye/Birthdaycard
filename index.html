@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><b>Happy Birthday!</b></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video id="background-video" autoplay muted loop>
+        <source src="balloons1.mp4" type="video/mp4">
+    </video>
+    <img src="cake.png" alt="Birthday Cake" class="birthday-cake">
+<div class="gift-box" id="giftBox" onclick="openGift()">
+    <div class="lid"></div>
+    <div class="box"></div>
+    <p class="click-text">🎁 Tap to Open 🎁</p>
+  </div>
+  
+  <div id="surprise" class="hidden birthday-card">
+    <h1>🎉 Happy Birthday Sumo! 🎉</h1>
+  
+    <!-- Photos Section -->
+    <div class="photo-gallery">
+      <img src="sumo.jpg" alt="💖">
+      <img src="sumo2.jpg" alt="💖">
+      <img src="sumo3.jpg" alt="💖">
+    </div>
+  
+    <!-- Note Message -->
+    <div class="note">
+      
+      <p>Wishing you a day filled with love, laughter, and everything you've ever dreamed of.
+        You deserve the entire world, and I’m lucky to call you my friend.
+        Happy Birthday, my beautiful soul! 🎂✨</p>
+        <p>Keep rocking, shining, and living your dreams! 🌟</p>
+        <p>💖💖You're not just a friend, you're family! 🥰</p>
+        <p>Looopppp you yarrrr!💖💖💖💖💖💖💖💖💖💖</p>
+    </div>
+  </div>
+  
+  <!-- Background music -->
+  <audio id="birthdayMusic" src="happy-birthday-.mp3" preload="auto"></audio>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti"></script>
+    <script>
+        function openGift() {
+            document.getElementById('giftBox').style.display = 'none';
+            document.getElementById('surprise').classList.remove('hidden');
+        
+            const music = document.getElementById('birthdayMusic');
+            music.play();
+        
+            setInterval(() => {
+              confetti({
+                particleCount: 150,
+                spread: 60,
+                origin: { y: 0.6 }
+              });
+            }, 2000);
+        }
+        </script>
+</body>
+</html>
